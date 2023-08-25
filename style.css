@@ -1,0 +1,143 @@
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@500;700&display=swap');
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  list-style: none;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: #ecf2f8;
+  font-family: 'Manrope', sans-serif;
+}
+main {
+  display: flex;
+}
+
+.drawers {
+  max-height: 600px;
+  max-width: 350px;
+  display: block;
+}
+
+.bg-info {
+  background-color: #fff;
+  padding: 20px;
+  max-width: 600px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  position: relative;
+}
+h1 {
+  font-size: 1.2rem;
+  color: #48556a;
+  padding-top: 10px;
+}
+p {
+  font-size: 0.9rem;
+  font-weight: 400;
+  line-height: 1.4rem;
+  color: #7d8da2;
+}
+ul {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.info-avatar {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.avatar {
+  width: 60px;
+  border-radius: 50%;
+}
+
+strong {
+  color: #48556a;
+}
+span {
+  color: #7d8da2;
+}
+
+.info-avatar span {
+  display: block;
+}
+
+li button {
+  border: 0;
+  padding: 10px;
+  border-radius: 50%;
+  cursor: pointer;
+  position: relative;
+  z-index: 2;
+}
+
+.share-bg {
+  background-color: #48556a;
+  padding: 20px;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  border-radius: 4px;
+  color: #ecf2f8;
+  position: absolute;
+  top: 110px;
+  right: -50px;
+  display: none;
+}
+.share-bg.ativo {
+  display: flex;
+}
+.share-bg::before {
+  content: '';
+  width: 0;
+  height: 0;
+  border-left: 20px solid transparent;
+  border-right: 20px solid transparent;
+  border-bottom: 20px solid #48556a; /* Mesma cor de fundo do .share-bg */
+  position: absolute;
+  top: 40px;
+  left: 50%;
+  transform: translateX(-50%) rotate(45deg);
+}
+.share ul li img {
+  width: 15px;
+  height: 15px;
+  cursor: pointer;
+}
+
+@media (max-width: 1000px) {
+  main {
+    flex-direction: column;
+  }
+  .bg-info {
+    width: 350px;
+  }
+  h1 {
+    font-size: 1rem;
+  }
+  p {
+    font-size: 0.8rem;
+  }
+  .share-bg {
+    top: 220px;
+    width: 100%;
+    right: 0;
+    padding: 30px;
+  }
+  .share-bg::before {
+    display: none;
+  }
+  button {
+    margin-top: 25px;
+    padding: 5px;
+  }
+}
